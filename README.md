@@ -99,10 +99,10 @@ To clone the GitHub repository for `Noml_Plus` by `UniqueName12345`, add it to t
 3. Clone the GitHub repository using the following command:
 
    ```shell
-   git clone https://github.com/UniqueName12345/Noml_Plus.git
+   git clone https://github.com/GenericProgrammer1234/Noml.git
    ```
 
-   This command will create a directory named `Noml_Plus` containing the repository's files.
+   This command will create a directory named `Noml` containing the repository's files.
 
 ### Adding to PYTHONPATH (Linux):
 
@@ -114,10 +114,10 @@ To clone the GitHub repository for `Noml_Plus` by `UniqueName12345`, add it to t
    nano ~/.bashrc
    ```
 
-3. Add the following line to the end of the file, replacing `/path/to/Noml_Plus` with the actual path to your `Noml_Plus` directory:
+3. Add the following line to the end of the file, replacing `/path/to/Noml` with the actual path to your `Noml` directory:
 
    ```shell
-   export PYTHONPATH=$PYTHONPATH:/path/to/Noml_Plus
+   export PYTHONPATH=$PYTHONPATH:/path/to/Noml
    ```
 
 4. Save the file and exit the text editor.
@@ -136,10 +136,10 @@ To clone the GitHub repository for `Noml_Plus` by `UniqueName12345`, add it to t
 
 3. Under "User variables" or "System variables" (depending on whether you want to set the PYTHONPATH for your user or the entire system), locate the "Path" variable and click "Edit."
 
-4. In the "Edit Environment Variable" window, click "New," and add the path to the `Noml_Plus` directory. For example, if `Noml_Plus` is in your user's Documents folder, you would add something like:
+4. In the "Edit Environment Variable" window, click "New," and add the path to the `Noml` directory. For example, if `Noml` is in your user's Documents folder, you would add something like:
 
    ```
-   C:\Users\<YourUsername>\Documents\Noml_Plus
+   C:\Users\<YourUsername>\Documents\Noml
    ```
 
 5. Click "OK" to save the changes.
@@ -154,13 +154,13 @@ To clone the GitHub repository for `Noml_Plus` by `UniqueName12345`, add it to t
    nano ~/.bashrc
    ```
 
-3. Add an alias to the end of the file. For example, to create an alias named `nomlplus`:
+3. Add an alias to the end of the file. For example, to create an alias named `noml`:
 
    ```shell
-   alias nomlplus="python3 /path/to/Noml_Plus/noml_plus.py"
+   alias noml="python3 /path/to/Noml/editor.py"
    ```
 
-   Replace `/path/to/Noml_Plus` with the actual path to your `Noml_Plus` directory.
+   Replace `/path/to/Noml` with the actual path to your `Noml` directory.
 
 4. Save the file and exit the text editor.
 
@@ -170,16 +170,16 @@ To clone the GitHub repository for `Noml_Plus` by `UniqueName12345`, add it to t
    source ~/.bashrc
    ```
 
-Now, you should be able to use the `nomlplus` alias to run the `noml_plus.py` script from anywhere in your terminal.
+Now, you should be able to use the `noml` alias to run the `editor.py` script from anywhere in your terminal.
 
 ### Creating a Shortcut (Windows):
 
-1. Locate the `noml_plus.py` script inside the `Noml_Plus` directory.
+1. Locate the `editor.py` script inside the `Noml` directory.
 
-2. Right-click on the `noml_plus.py` file and select "Create shortcut."
+2. Right-click on the `editor.py` file and select "Create shortcut."
 
 3. Drag the newly created shortcut to your desktop or a convenient location.
 
 4. To run the script, simply double-click on the shortcut.
 
-You now have a shortcut to execute `noml_plus.py` on Windows.
+You now have a shortcut to execute `editor.py` on Windows.
