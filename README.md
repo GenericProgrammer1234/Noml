@@ -19,7 +19,7 @@ NOML features a simple window management system that allows you to switch betwee
 
 ### `windows()`
 - Access: Press "w" while in the main menu.
-- Description: Displays a list of open windows, allowing you to switch between them.
+- Description: Displays a list of open windows. You can not switch through them.
 - Usage: 
   - Press "q" to exit the window manager and return to the main menu.
 
@@ -45,7 +45,6 @@ NOML enables you to perform basic file-related operations, including opening and
 - Command: `fs`
 - Description: Opens a file structure explorer to navigate and view directory contents.
 - Usage: 
-  - Use the arrow keys to navigate directories.
   - Press "o" to open a file for editing within the file structure explorer.
 
 ## Text Editing
@@ -71,17 +70,17 @@ NOML provides a minimalistic text editing environment for making changes to file
 ### Visual Editor Mode
 - Description: Allows for cursor movement and text editing using arrow keys and other simple keystrokes.
 - Usage: 
-  - Enter the visual editor mode by pressing the backtick key (\`) while in the editor.
+  - Enter the visual editor mode by pressing the `v` key while in the editor.
   - Use arrow keys to navigate and edit text.
   - Press Enter to create a new line.
   - Press Backspace to delete characters.
-  - Press the backtick key (\`) again to exit visual editor mode.
+  - Press the `v` key again to exit visual editor mode.
 
 Please note that NOML is designed to be a minimalistic text editor, and its functionality is limited to basic text editing and file operations. Enjoy the simplicity and customize it to suit your preferences.
 
 ## Installation
 
-To clone the GitHub repository for `Noml_Plus` by `UniqueName12345`, add it to the `PYTHONPATH`, and create an alias, follow these steps for both Windows and Linux. Before you begin, make sure you have Git installed on your system.
+To clone the GitHub repository for `Noml` by `GenericProgrammer12345`, add it to the `PYTHONPATH`, and create an alias, follow these steps for both Windows and Linux. Before you begin, make sure you have Git installed on your system.
 
 **DO NOT USE INSTALLER.BAT OR INSTALLER.SH**
 
