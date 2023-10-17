@@ -1,8 +1,13 @@
-from os import listdir
+from os import listdir, system
 from os.path import exists, abspath, isfile, isdir, join, relpath
 from sysimps import getch
 from commands import clear, echo, tput
+from subprocess import check_output
 
+# stands for split list into pairs
+def slip(input_list, n):
+    pairs = [input_list[i:i + n] for i in range(0, len(input_list), n)]
+    return pairs
 
 class Global:
     windows = []
@@ -111,6 +116,53 @@ def filestructure(directory, current=None):
         elif char == "o":
             editor(current)
 
+def build(filename):
+    clear()
+    idx = 0
+    allsys = ["py2", "py3", "java", "c", "cpp"] 
+
+    while True:
+        clear()
+        print("\033[0;32m[Build] System list:\033[0;0m")
+        for sys in allsys:
+            if allsys[idx] == sys:
+                print("\033[0;33m" + sys + "\033[0;0m")
+            else:
+                print(sys)
+        char = getch()
+        if char == "up":
+            if not idx == 0:
+                idx -= 1
+        elif char == "down":
+            if not idx == len(allsys)-1:
+                idx += 1
+        elif char == "\r":
+            break
+        elif char == "q":
+            return
+
+    print("\033[0;32m[Build] Running...\033[0;0m")
+    if allsys[idx] == "py2":
+        system(f"python2 {filename}")
+    elif allsys[idx] == "py3":
+        system(f"python3 {filename}")
+    elif allsys[idx] == "java":
+        system(f"javac {filename}")
+        system(f"java {filename.split('.java')[0]}")
+    elif allsys[idx] == "c":
+        system(f"gcc -o {filename.split('.c')[0]} {filename}")
+        system(f"./{filename.split('.c')[0]}")
+    elif allsys[idx] == "cpp":
+        system(f"g++ -o {filename.split('.cpp')[0]} {filename}")
+        system(f"./{filename.split('.cpp')[0]}")
+
+    if (code := int(check_output("echo $?", shell=True).strip().decode())) == 0:
+        print("\033[0;32m[Build] OK completed with exitcode 0\033[0;0m")
+    else:
+        print(f"\033[0;31m[Build] ERROR completed with exitcode {code}\033[0;0m")
+    getch()
+
+
 
 def editor(filename):
     windows_manager.append(f"Editor Window ({filename})")
@@ -156,6 +208,8 @@ def editor(filename):
                     words[word_idx + int(cmdargs[0])])
             elif cmdname in ("ml", "moveline"):
                 pointer[0] += int(cmdargs[0])
+            elif cmdname in ("mp", "movepage"):
+                page += int(cmdargs[0])
             elif cmdname in ("r", "replace"):
                 lines[pointer[0]][pointer[1]] = cmdargs[0]
             elif cmdname in ("rw", "replaceword"):
@@ -189,6 +243,8 @@ def editor(filename):
                 filestructure("./", filename)
             elif cmdname in ("w", "windows"):
                 windows()
+            elif cmdname in ("b", "build"):
+                build(filename)
             else:
                 pass
         else:
