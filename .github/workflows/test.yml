@@ -11,7 +11,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: git clone https://github.com/GenericProgrammer1234/Noml
-      - run: export PYTHONPATH="./Noml:$PYTHONPATH"
-      - run: alias noml="python ./Noml/app.py"
-      - run: noml
+      - run: curl https://raw.githubusercontent.com/GenericProgrammer1234/Noml/main/install.sh | bash
